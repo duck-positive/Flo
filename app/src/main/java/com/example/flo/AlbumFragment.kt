@@ -9,12 +9,11 @@ import androidx.fragment.app.Fragment
 import com.example.flo.adapter.AlbumViewpagerAdapter
 import com.example.flo.data.Album
 import com.example.flo.databinding.FragmentAlbumBinding
-import com.example.flo.ui.HomeFragment
+import com.example.flo.ui.home.HomeFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
 import android.util.Log
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import com.example.flo.viewmodel.HomeViewModel
 
 class AlbumFragment : Fragment() {

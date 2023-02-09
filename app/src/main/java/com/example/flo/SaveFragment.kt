@@ -21,7 +21,7 @@ class SaveFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSaveBinding.inflate(inflater,container,false)
-        songDB = SongDatabase.getInstance(requireContext())!!
+        //songDB = SongDatabase.getInstance(requireContext())!!
 
         return binding.root
     }
@@ -36,14 +36,14 @@ class SaveFragment : Fragment() {
 
         songRVAdapter.setMyItemClickListener(object : SongRVAdapter.MyItemClickListener{
             override fun onRemoveSong(songId: Int) {
-                songDB.songDao().updateIsLikeById(false,songId)
+                //songDB.songDao().updateIsLikeById(false,songId)
             }
         })
 
 
         binding.lockerFileRecyclerView.adapter = songRVAdapter
 
-        songRVAdapter.addSongs(songDB.songDao().getLikedSongs(true) as ArrayList)
+        //songRVAdapter.addSongs(songDB.songDao().getLikedSongs(true) as ArrayList)
 
     }
 

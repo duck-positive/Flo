@@ -7,7 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.flo.data.Album
 import com.example.flo.databinding.ActivityMainBinding
-import com.example.flo.ui.HomeFragment
+import com.example.flo.ui.home.HomeFragment
 import com.google.gson.Gson
 
 
@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportFragmentManager.beginTransaction().add(R.id.main_frm, HomeFragment()).commit()
 
         initNavigation()
         //inputDummyAlbums()
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
     override fun onStart() {
         super.onStart()
         val getSong = getSharedPreferences("song", MODE_PRIVATE)

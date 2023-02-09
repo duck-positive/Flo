@@ -1,10 +1,8 @@
-package com.example.flo.ui
+package com.example.flo.ui.home
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.flo.*
@@ -27,15 +25,19 @@ class HomeFragment : Fragment() {
     private val homeViewModel : HomeViewModel by activityViewModels()
     private lateinit var songDB: SongDatabase
     //private lateinit var albumRVAdapter: AlbumRVAdapter
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        homeViewModel.initAlbum()
+        homeViewModel.addAlbum(Album(2,"dasd","das",null,null))
+        homeViewModel.addAlbum(Album(1,"DASd","asda",null,null))
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        homeViewModel.addAlbum(Album(2,"dasd","das",null,null))
-        homeViewModel.addAlbum(Album(1,"DASd","asda",null,null))
+
         Log.d("home", "${homeViewModel.albumList}")
         //songDB = SongDatabase.getInstance(requireContext())!!
         //albums.addAll(songDB.albumDao().getAlbums())

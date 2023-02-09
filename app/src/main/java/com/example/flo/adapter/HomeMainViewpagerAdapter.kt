@@ -2,10 +2,10 @@ package com.example.flo.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.flo.HomeMain2Fragment
-import com.example.flo.HomeMain3Fragment
-import com.example.flo.HomeMain4Fragment
-import com.example.flo.HomeMainFragment
+import com.example.flo.ui.home.HomeMain2Fragment
+import com.example.flo.ui.home.HomeMain3Fragment
+import com.example.flo.ui.home.HomeMain4Fragment
+import com.example.flo.ui.home.HomeMainFragment
 
 class HomeMainViewpagerAdapter (fragment : Fragment) : FragmentStateAdapter(fragment){
 

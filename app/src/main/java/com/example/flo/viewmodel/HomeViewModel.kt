@@ -1,5 +1,6 @@
 package com.example.flo.viewmodel
 
+import android.provider.MediaStore
 import androidx.lifecycle.ViewModel
 import com.example.flo.data.Album
 
@@ -12,10 +13,14 @@ class HomeViewModel : ViewModel() {
     val selectedAlbum : Album
         get() = _selectedAlbum
 
+
     fun addAlbum(album: Album){
         _albumList.add(album)
     }
     fun selectAlbum(album : Album) {
         _selectedAlbum = album
+    }
+    fun initAlbum(){
+        _albumList.clear()
     }
 }

@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Flo"
 include ':app'
+include ':macrobenchmark'
